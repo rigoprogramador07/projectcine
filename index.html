@@ -21,10 +21,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <!-- Site Metas -->
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
     <link rel="shortcut icon" href="images/logo_small_icon_only_inverted(1).png" type="">
 
     <!-- Bootstrap and Font Awesome -->
@@ -39,19 +35,6 @@
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/responsive.css" rel="stylesheet" />
 
-    <!-- Other Vendor CSS -->
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-    <!-- Owl Carousel Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-
-    <!-- jivosite widget -->
-    <script src="//code.jivosite.com/widget/pZF4qOoR9w" async></script>
-
 </head>
 
 <body>
@@ -60,124 +43,93 @@
   <h1>Bienvenido a CineMarte</h1>
   <button id="enable-notifications" class="btn btn-primary">Habilitar Notificaciones</button>
 
-  <div id="movie-list" class="d-flex justify-content-center flex-wrap">
+  <!-- Tabla de Películas -->
+  <table class="table table-striped mt-4">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Película</th>
+      </tr>
+    </thead>
+    <tbody id="movie-list">
       <!-- Aquí se agregarán las películas -->
-  </div>
+    </tbody>
+  </table>
 
-  <form id="movie-form" class="d-flex justify-content-center">
+  <!-- Formulario para agregar películas -->
+  <form id="movie-form" class="d-flex justify-content-center mt-3">
       <input type="text" id="movie-input" placeholder="Escribe el nombre de una película" required class="form-control" style="max-width: 300px; margin-right: 10px;">
       <button type="submit" class="btn btn-success">Agregar Película</button>
   </form>
 </div>
 
+<!-- Scripts -->
+<script>
+    // Manejo de la interfaz de películas
+    document.getElementById('movie-form').addEventListener('submit', (event) => {
+        event.preventDefault();
 
-    <!-- Scripts -->
-    <script>
-        // Verificar si el navegador soporta Service Workers
-        if ('serviceWorker' in navigator && location.protocol === 'https:') {
-            navigator.serviceWorker.register('service-worker.js')
-                .then(reg => {
-                    console.log('Service Worker registrado:', reg);
+        const movieInput = document.getElementById('movie-input');
+        const movie = movieInput.value;
 
-                    // Después de registrar el Service Worker, intentar obtener la suscripción para Push Notifications
-                    reg.pushManager.getSubscription()
-                        .then((subscription) => {
-                            if (!subscription) {
-                                // Clave pública de FCM (asegúrate de reemplazar con la clave correcta)
-                                const applicationServerKey = 'BOKcIx93kERD-d3-rB0nS-3tRSYxYmXzdeOWa8gH7EU5TvpDMW2gRg44IwrriSVe3LFwuS6UeOMDA0_Oiop0Pmg';
+        if (movie) {
+            // Obtener la lista de películas y crear un nuevo renglón
+            const movieList = document.getElementById('movie-list');
+            const rowCount = movieList.rows.length + 1; // Contador de películas
 
-                                // Suscribir al cliente para Push Notifications
-                                reg.pushManager.subscribe({
-                                    userVisibleOnly: true,
-                                    applicationServerKey: urlBase64ToUint8Array(applicationServerKey)
-                                }).then((subscription) => {
-                                    console.log('Suscripción Push:', subscription);
-                                }).catch((error) => {
-                                    console.error('Error al suscribirse a Push Notifications:', error);
-                                });
-                            }
-                        })
-                        .catch((error) => {
-                            console.error('Error al obtener suscripción:', error);
-                        });
-                })
-                .catch((error) => {
-                    console.error('Error al registrar el Service Worker:', error);
-                });
-        } else {
-            console.error('Service Workers no son soportados en este navegador.');
-        }
+            // Crear una nueva fila en la tabla
+            const row = movieList.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
 
-        // Convertir la clave base64 a Uint8Array (para la suscripción de Push Notifications)
-        function urlBase64ToUint8Array(base64String) {
-            const padding = '='.repeat((4 - base64String.length % 4) % 4);
-            const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
-            const rawData = window.atob(base64);
-            const outputArray = new Uint8Array(rawData.length);
-            for (let i = 0; i < rawData.length; ++i) {
-                outputArray[i] = rawData.charCodeAt(i);
-            }
-            return outputArray;
-        }
+            // Asignar el número de película y el nombre
+            cell1.textContent = rowCount;
+            cell2.textContent = movie;
 
-        // Manejo de la interfaz de películas
-        document.getElementById('movie-form').addEventListener('submit', (event) => {
-            event.preventDefault();
+            // Limpiar el campo de entrada
+            movieInput.value = '';
 
-            const movieInput = document.getElementById('movie-input');
-            const movie = movieInput.value;
+            // Mostrar alerta
+            alert('¡Película agregada a la lista!');
 
-            if (movie) {
-                // Agregar película a la lista
-                const movieList = document.getElementById('movie-list');
-                const listItem = document.createElement('li');
-                listItem.textContent = movie;
-                movieList.appendChild(listItem);
-
-                // Limpiar campo de entrada
-                movieInput.value = '';
-
-                // Mostrar alerta
-                alert('¡Película agregada a la lista!');
-
-                // Verificar si el navegador soporta notificaciones
-                if ('Notification' in window) {
-                    if (Notification.permission === 'granted') {
-                        // Si ya se tiene permiso, muestra una notificación
-                        new Notification('Nueva película agregada', { body: movie });
-                    } else if (Notification.permission !== 'denied') {
-                        // Si no se ha dado permiso, lo solicitamos
-                        Notification.requestPermission().then((permission) => {
-                            if (permission === 'granted') {
-                                new Notification('Nueva película agregada', { body: movie });
-                            }
-                        });
-                    }
-                }
-            }
-        });
-
-        // Función para habilitar las notificaciones push
-        document.getElementById('enable-notifications').addEventListener('click', () => {
+            // Verificar si el navegador soporta notificaciones
             if ('Notification' in window) {
-                // Verificar si el permiso ya ha sido concedido
                 if (Notification.permission === 'granted') {
-                    alert('Las notificaciones ya están habilitadas.');
-                } else {
-                    // Solicitar permiso para mostrar notificaciones
-                    Notification.requestPermission().then(permission => {
+                    // Si ya se tiene permiso, muestra una notificación
+                    new Notification('Nueva película agregada', { body: movie });
+                } else if (Notification.permission !== 'denied') {
+                    // Si no se ha dado permiso, lo solicitamos
+                    Notification.requestPermission().then((permission) => {
                         if (permission === 'granted') {
-                            alert('Notificaciones habilitadas.');
-                        } else {
-                            alert('No se han habilitado las notificaciones.');
+                            new Notification('Nueva película agregada', { body: movie });
                         }
                     });
                 }
-            } else {
-                alert('Este navegador no soporta notificaciones.');
             }
-        });
-    </script>
+        }
+    });
+
+    // Función para habilitar las notificaciones push
+    document.getElementById('enable-notifications').addEventListener('click', () => {
+        if ('Notification' in window) {
+            // Verificar si el permiso ya ha sido concedido
+            if (Notification.permission === 'granted') {
+                alert('Las notificaciones ya están habilitadas.');
+            } else {
+                // Solicitar permiso para mostrar notificaciones
+                Notification.requestPermission().then(permission => {
+                    if (permission === 'granted') {
+                        alert('Notificaciones habilitadas.');
+                    } else {
+                        alert('No se han habilitado las notificaciones.');
+                    }
+                });
+            }
+        } else {
+            alert('Este navegador no soporta notificaciones.');
+        }
+    });
+</script>
 </body>
 
 <!-- Modal de Iniciar Sesión -->
