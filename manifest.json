@@ -1,0 +1,21 @@
+{
+  "name": "Cinemarte-AWP",
+  "short_name": "Cinemarte",
+  "start_url": "./index.php",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ff7f00", 
+  "icons": [
+    {
+      "src": "images/Webp.net-resizeimage.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/Webp.net-resizeimage (1).png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "gcm_sender_id": "681944569313"
+}

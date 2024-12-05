@@ -1,0 +1,33 @@
+2024-02-15 06:33:PM	 Descripcion: Se creó un nuevo producto ('si') por el usuario Admin. Categoría: 1
+2024-02-15 06:33:PM	 Descripcion: Se modificó el producto (ID: '49', Nombre: 'si') por el usuario Admin. Categoría: 3
+2024-02-15 06:34:PM	 Descripcion: Se realizó una búsqueda general por el usuario Admin. Término de búsqueda: ''. Categoría: 1
+2024-02-15 06:34:PM	 Descripcion: Se realizó una búsqueda por el usuario Admin. Término de búsqueda: 'si'. Categoría: 1
+2024-02-15 06:34:PM	 Descripcion: Se eliminó el producto (ID: '49') por el usuario Admin. Categoría: 3
+2024-02-15 06:34:PM	 Descripcion: Se eliminó el producto (ID: '49') por el usuario Admin. Categoría: 3
+2024-02-16 05:18:PM	 Descripcion: Se creó un nuevo producto ('si') por el usuario Admin. Categoría: 1
+2024-02-23 06:02:PM	 Descripcion: Se creó un nuevo producto ('si') por el usuario Admin. Categoría: 1
+2024-02-23 06:02:PM	 Descripcion: Se eliminó el producto (ID: '51') por el usuario Admin. Categoría: 3
+2024-02-23 06:02:PM	 Descripcion: Se eliminó el producto (ID: '51') por el usuario Admin. Categoría: 3
+2024-02-23 06:02:PM	 Descripcion: Se modificó el producto (ID: '50', Nombre: 'si') por el usuario Admin. Categoría: 3
+2024-04-10 11:29:AM	 Descripcion: Se creó un nuevo producto ('Dos Equis') por el usuario Admin. Categoría: 1
+2024-04-10 11:29:AM	 Descripcion: Se modificó el producto (ID: '52', Nombre: 'Dos Equis') por el usuario Admin. Categoría: 3
+2024-04-10 11:29:AM	 Descripcion: Se realizó una búsqueda por el usuario Admin. Término de búsqueda: 'si'. Categoría: 1
+2024-04-10 11:29:AM	 Descripcion: Se realizó una búsqueda general por el usuario Admin. Término de búsqueda: ''. Categoría: 1
+2024-04-10 11:29:AM	 Descripcion: Se eliminó el producto (ID: '52') por el usuario Admin. Categoría: 3
+2024-04-10 11:29:AM	 Descripcion: Se eliminó el producto (ID: '52') por el usuario Admin. Categoría: 3
+2024-04-10 11:33:AM	 Descripcion: Se eliminó el producto (ID: '52') por el usuario Admin. Categoría: 3
+2024-04-10 11:33:AM	 Descripcion: Se eliminó el producto (ID: '52') por el usuario Admin. Categoría: 3
+2024-04-10 11:34:AM	 Descripcion: Se eliminó el producto (ID: '52') por el usuario Admin. Categoría: 3
+2024-04-10 11:34:AM	 Descripcion: Se eliminó el producto (ID: '52') por el usuario Admin. Categoría: 3
+2024-04-10 11:35:AM	 Descripcion: Se eliminó el producto (ID: '52') por el usuario Admin. Categoría: 3
+2024-04-10 11:35:AM	 Descripcion: Se eliminó el producto (ID: '52') por el usuario Admin. Categoría: 3
+2024-04-10 11:35:AM	 Descripcion: Se eliminó el producto (ID: '52') por el usuario Admin. Categoría: 3
+2024-04-10 11:35:AM	 Descripcion: Se eliminó el producto (ID: '52') por el usuario Admin. Categoría: 3
+2024-04-12 05:16:PM	 Descripcion: Se creó un nuevo producto ('Dos Equis') por el usuario Admin. Categoría: 1
+2024-04-12 05:16:PM	 Descripcion: Se modificó el producto (ID: '39', Nombre: 'Dos Equis') por el usuario Admin. Categoría: 3
+2024-04-12 05:16:PM	 Descripcion: Se eliminó el producto (ID: '39') por el usuario Admin. Categoría: 3
+2024-04-12 05:16:PM	 Descripcion: Se eliminó el producto (ID: '39') por el usuario Admin. Categoría: 3
+2024-04-12 05:41:PM	 Descripcion: Se creó un nuevo producto ('batman') por el usuario Admin. Categoría: 1
+2024-04-12 05:41:PM	 Descripcion: Se modificó el producto (ID: '40', Nombre: 'a') por el usuario Admin. Categoría: 3
+2024-04-12 05:41:PM	 Descripcion: Se eliminó el producto (ID: '40') por el usuario Admin. Categoría: 3
+2024-04-12 05:41:PM	 Descripcion: Se eliminó el producto (ID: '40') por el usuario Admin. Categoría: 3
