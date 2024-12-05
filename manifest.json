@@ -1,7 +1,7 @@
 {
   "name": "Cinemarte-AWP",
   "short_name": "Cinemarte",
-  "start_url": "./index.htnl",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#000000",
   "theme_color": "#ff7f00",
