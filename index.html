@@ -55,18 +55,21 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>Bienvenido a CineMarte</h1>
-        <button id="enable-notifications" class="btn btn-primary">Habilitar Notificaciones</button>
-        <div id="movie-list">
-            <!-- Aquí se agregarán las películas -->
-        </div>
+<!-- Agregar un contenedor centrado para las películas -->
+<div class="container text-center">
+  <h1>Bienvenido a CineMarte</h1>
+  <button id="enable-notifications" class="btn btn-primary">Habilitar Notificaciones</button>
 
-        <form id="movie-form">
-            <input type="text" id="movie-input" placeholder="Escribe el nombre de una película" required />
-            <button type="submit" class="btn btn-success">Agregar Película</button>
-        </form>
-    </div>
+  <div id="movie-list" class="d-flex justify-content-center flex-wrap">
+      <!-- Aquí se agregarán las películas -->
+  </div>
+
+  <form id="movie-form" class="d-flex justify-content-center">
+      <input type="text" id="movie-input" placeholder="Escribe el nombre de una película" required class="form-control" style="max-width: 300px; margin-right: 10px;">
+      <button type="submit" class="btn btn-success">Agregar Película</button>
+  </form>
+</div>
+
 
     <!-- Scripts -->
     <script>

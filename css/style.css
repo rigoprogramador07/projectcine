@@ -771,6 +771,26 @@ a:focus {
   position: relative;
   margin-top: 30px;
 }
+/* Estilo adicional para centrar los elementos */
+#movie-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+#movie-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#movie-input {
+  max-width: 300px;
+  margin-right: 10px;
+}
+
 
 .client_section .box .img-box img {
   border-radius: 100%;
